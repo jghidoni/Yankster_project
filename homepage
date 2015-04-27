@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+<center><h1>Welcome to Yanksters' restaurants app</h1>
+<p>Select a restaurant you like from the drop-down menu</p>
+<form>
+<p><select>
+<option selected>Select One</option>
+<option value="http://mousetrax.com">Mousetrax</option>
+<option value="http://yahoo.com">Yahoo</option>
+<option value="http://microsoft.com">Microsoft</option>
+<option value="http://personal-computer-tutor.com">Linda's Computer Stop</option>
+<option value="http://personal-computer-tutor.com/abc">ABC Newsletter</option>
+</select></p>
+<p><input type="button" onClick="myFunction" value="Find a similar restaurant"></p>
+</form>
+</center>
+</body>
+
+</html>
