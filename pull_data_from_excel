@@ -3,6 +3,8 @@ from openpyxl import load_workbook
 file_name = 'Yankster_project_template.xlsx'  #change with name of final file
 sheet_name = 'input'  #change with name of worksheet
 
+#1) pull input data from the excel file
+
 def get_restaurants_list():
     wb = load_workbook(filename = file_name, data_only=True)  #load the excel file named 'file_name' considering values only --> wb
     ws = wb[sheet_name]  #load the worksheet 'sheet_name' --> ws
@@ -11,3 +13,18 @@ def get_restaurants_list():
     restaurants_range = range(13,13+tot_restaurants)  #create a range that goes from the first row of input_restaurants, i.e. 13, to the last
     for i in restaurants_range:
         restaurants_input.append(ws['A'+str(i)].value)  #create the list of input_restaurants that users can pick from
+
+
+#2) pull output data from the excel file
+
+choice = input('Please select a restaurant from the list:' , )  #TO IMPROVE - how to create a list of options for users to select???????
+
+def find_similar_restaurant(file_name, sheet_name, choice, restaurants_range):
+    wb = load_workbook(filename = file_name, data_only=True)  #load the excel file named 'file_name' considering values only --> wb
+    ws = wb[sheet_name]  #load the worksheet 'sheet_name' --> ws
+    counter = 13  #first row of input_restaurants
+    for i in restaurants_range:
+        if ws['A'+str(i)].value == choice:
+            print('The most similar restaurant to', choice, 'is', ws['G'+str(counter)].value)  #match the input_restaurants selected with the corresponding output_restaurants
+        else:
+            counter += 1
